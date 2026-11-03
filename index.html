@@ -119,6 +119,20 @@ section.block.band{background:var(--bg-band);border-top:1px solid var(--line);bo
 .tile svg{display:block;width:100%;height:44px;margin-top:10px}
 .tile .when{font-size:0.7rem;color:var(--ink-3);margin-top:4px}
 
+/* ── dose viz ── */
+.dv .sec-sub{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.dv .sec-sub h3{margin:0}
+.dv .sec-sub p{font-size:0.84rem;color:var(--ink-2);max-width:70ch}
+.dv #doseViz{overflow-x:auto;padding-bottom:4px}.dv svg{display:block;width:100%;min-width:680px;height:auto;overflow:visible}
+.dv .ax text{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+.dv .pl text{font-family:var(--mono);font-size:10px;fill:var(--ink-2);font-weight:600}
+.dv .step{fill:var(--accent);fill-opacity:.16;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.dv .stepl text{font-family:var(--mono);font-size:10.5px;fill:var(--ink);font-weight:600}
+.dv .pred rect{fill:var(--high);fill-opacity:.25;stroke:var(--high);stroke-opacity:.6}
+.dv .pred text{font-family:var(--mono);font-size:9.5px;fill:var(--ink-2)}
+.dv .ttl text{font-size:11px;fill:var(--ink-2);font-weight:600}
+.dv .nal text{font-family:var(--mono);font-size:10px;fill:var(--ink);font-weight:600}
+
 /* ── regimen ── */
 .rx{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
 @media(max-width:900px){.rx{grid-template-columns:1fr}}
@@ -262,6 +276,10 @@ footer p{max-width:90ch}
 <section class="block" id="allapot"><div class="wrap">
   <div class="sec-head"><h2>Hol tart most</h2><p>Az utolsó mért érték és az elmúlt 15 hónap trendje. A zöld sáv a laboratóriumi referenciatartomány.</p></div>
   <div class="tiles" id="tiles"></div>
+  <div class="card dv" style="margin-top:18px">
+    <div class="sec-sub"><h3>Astonin-dózis és nátrium ugyanazon az időskálán</h3><p>Az Astonin 2025.05 óta 2×1,75-ről 2×3-ra nőtt; a nátrium a kezdeti stabilizálás után 127–133 között maradt. Az egyetlen normál érték (148) 2026.02.09-én volt.</p></div>
+    <div id="doseViz"></div>
+  </div>
   <div class="grid-2" style="margin-top:18px">
     <div class="card">
       <h3>Ami rendben van</h3>
@@ -914,7 +932,35 @@ function buildCharts(){const g=document.getElementById('charts');g.innerHTML='';
     card.querySelectorAll('.hit').forEach(r=>{r.addEventListener('mouseenter',()=>{const x=p.v[+r.dataset.i];const st=status(x[1],p);tip.textContent=`${dd(x[0])}  ${x[2]||fmt(x[1])} ${p.unit}  (${SN[st]})`;const bb=svg.getBoundingClientRect(),cb=card.getBoundingClientRect();const sx=bb.width/W,sy=bb.height/H;tip.style.left=(bb.left-cb.left+X(x[0])*sx)+'px';tip.style.top=(bb.top-cb.top+Y(x[1])*sy-6)+'px';tip.classList.add('show')});r.addEventListener('mouseleave',()=>tip.classList.remove('show'))});
     g.appendChild(card)})}
 function niceStep(r){const p=Math.pow(10,Math.floor(Math.log10(r)));const f=r/p;return (f<1.5?1:f<3.5?2:f<7.5?5:10)*p}
-function buildAll(){buildTiles();buildCharts()}
+const predni=[['2025-05-23','2026-03-05','2×½'],['2026-03-05','2026-03-12','1×½'],['2026-03-12','2026-04-05','—'],['2026-04-05','2026-07-20','1×¼']];
+function buildDoseViz(){const el=document.getElementById('doseViz');const na=labs.find(l=>l.id==='na');
+  const W=920,ml=46,mr=16;const naH=130,gap=34,dH=70,pH=22;const top=14;const H=top+naH+gap+dH+8+pH+30;
+  const X=t=>ml+((+new Date(t)-T0)/(T1-T0))*(W-ml-mr);
+  const vals=na.v.map(x=>x[1]);const mn=105,mx=158;const Y=v=>top+(1-(v-mn)/(mx-mn))*naH;
+  let s='';
+  // Na panel
+  s+=`<g class="ttl"><text x="${ml}" y="${top-3}">Nátrium (mmol/L) · zöld sáv = referencia 135–155</text></g>`;
+  s+=`<rect x="${ml}" y="${Y(155)}" width="${W-ml-mr}" height="${Y(135)-Y(155)}" fill="var(--band)"/>`;
+  s+=`<line x1="${ml}" x2="${W-mr}" y1="${Y(135)}" y2="${Y(135)}" stroke="var(--ok)" stroke-opacity=".6"/><line x1="${ml}" x2="${W-mr}" y1="${Y(155)}" y2="${Y(155)}" stroke="var(--ok)" stroke-opacity=".6"/>`;
+  s+='<g class="ax">'+[110,120,130,140,150].map(t=>`<line x1="${ml}" x2="${W-mr}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--line)"/><text x="${ml-6}" y="${Y(t)+3}" text-anchor="end">${t}</text>`).join('')+'</g>';
+  s+=`<path d="${na.v.map((x,i)=>(i?'L':'M')+X(x[0]).toFixed(1)+' '+Y(x[1]).toFixed(1)).join(' ')}" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linejoin="round"/>`;
+  na.v.forEach(x=>{const st=status(x[1],na);s+=`<circle cx="${X(x[0])}" cy="${Y(x[1])}" r="5" class="pt ${st}" stroke="var(--surface)" stroke-width="2"/>`});
+  s+='<g class="nal">'+na.v.map(x=>{const up=x[1]>=134;return`<text x="${X(x[0])}" y="${Y(x[1])+(up?-10:16)}" text-anchor="middle">${x[1]}</text>`}).join('')+'</g>';
+  // dose panel (step)
+  const dTop=top+naH+gap;const doses=[1.75,2,2.25,2.5,3];const dY=v=>dTop+dH-(v/3.4)*dH;
+  s+=`<g class="ttl"><text x="${ml}" y="${dTop-6}">Astonin (tabletta, reggel × este)</text></g>`;
+  let path=`M${X(astonin[0][0])} ${dTop+dH}`;astonin.forEach(([a,b,l],i)=>{const v=parseFloat(l.split('×')[1].replace(',','.'));path+=` L${X(a)} ${dY(v)} L${X(b)} ${dY(v)}`});path+=` L${X(astonin[astonin.length-1][1])} ${dTop+dH} Z`;
+  s+=`<path class="step" d="${path}"/>`;
+  s+='<g class="stepl">'+astonin.map(([a,b,l])=>{const v=parseFloat(l.split('×')[1].replace(',','.'));const w=X(b)-X(a);return w>40?`<text x="${(X(a)+X(b))/2}" y="${dY(v)-5}" text-anchor="middle">${l}</text>`:''}).join('')+'</g>';
+  s+=`<line x1="${ml}" x2="${W-mr}" y1="${dTop+dH}" y2="${dTop+dH}" stroke="var(--line-strong)"/>`;
+  // predni strip
+  const pTop=dTop+dH+8;
+  s+='<g class="pred">'+predni.map(([a,b,l])=>{const w=X(b)-X(a);return (l==='—'?'':`<rect x="${X(a)}" y="${pTop}" width="${w}" height="${pH-4}" rx="2"/>`)+(w>36?`<text x="${(X(a)+X(b))/2}" y="${pTop+pH-8}" text-anchor="middle">${l==='—'?'nincs':l}</text>`:'')}).join('')+`<text x="${ml-6}" y="${pTop+pH-8}" text-anchor="end" style="fill:var(--ink-3)">predni</text></g>`;
+  // x axis
+  const xt=[['2025-05-01','2025 máj'],['2025-08-01','aug'],['2025-11-01','nov'],['2026-02-01','2026 feb'],['2026-05-01','máj']];
+  s+='<g class="ax">'+xt.map(([t,l])=>`<line x1="${X(t)}" x2="${X(t)}" y1="${top}" y2="${pTop+pH}" stroke="var(--line)" stroke-dasharray="2 3"/><text x="${X(t)}" y="${pTop+pH+16}" text-anchor="middle">${l}</text>`).join('')+'</g>';
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Astonin-dózis és nátrium idősor">${s}</svg>`}
+function buildAll(){buildTiles();buildDoseViz();buildCharts()}
 buildAll();
 </script>
 </body>
