@@ -144,6 +144,7 @@ section.block.band{background:var(--bg-band);border-top:1px solid var(--line);bo
 .data-table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 .data-table tr:last-child td{border-bottom:none}
 .data-table td:nth-child(2){font-family:var(--mono)}
+.dose-tbl td,.dose-tbl th{white-space:nowrap;font-size:0.82rem}.dose-tbl td small{white-space:normal;display:block;color:var(--ink-3);font-size:0.72rem;font-weight:400}.dose-tbl th small{font-weight:400;color:var(--ink-3)}.dose-tbl td:first-child{white-space:normal;min-width:150px}.dose-tbl td:nth-child(n+5){font-family:var(--mono)}
 .val-low{color:var(--low);font-weight:600}
 .val-high{color:var(--high);font-weight:600}
 .val-crit{color:var(--crit);font-weight:700;background:var(--crit-soft);border-radius:4px;padding:1px 5px}
@@ -300,16 +301,23 @@ footer p{max-width:90ch}
       <div class="med"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
         <div><div class="t">Simparica Trio</div><div class="d">Bolha, kullancs, féreg — egész évben.</div></div>
         <div class="dose">havonta<small>12 hónap</small></div></div>
-      <details class="history"><summary>Dózistörténet 2025.05 óta</summary>
-        <table class="data-table"><tr><th>Időszak</th><th>Astonin</th><th>Prednizolon</th><th>Egyéb</th></tr>
-          <tr><td>2025.05.22 →</td><td>2×1,75</td><td>2×½</td><td>Addison-diagnózis, induló dózis</td></tr>
-          <tr><td>2025.08.08 →</td><td>2×2</td><td>2×½</td><td>Na 127 miatt emelés</td></tr>
-          <tr><td>2025.11.20 →</td><td>2×2,25</td><td>2×½</td><td>újabb emelés</td></tr>
-          <tr><td>~2026.03 (1 hét)</td><td>2×2,5</td><td>1×½ reggel</td><td>Ursofalk 2×½ indul</td></tr>
-          <tr><td>~2026.03 közepe →</td><td>2×3</td><td>elhagyva → ½ tünetekre</td><td>Ursofalk 2×½ (~1 hónapos kúra); első predni-mentes napon remegés, lihegés</td></tr>
-          <tr><td>~2026.04 eleje →</td><td>2×3</td><td>1×¼ reggel</td><td>az Ursofalk-kúra közepétől visszavezetve</td></tr>
-          <tr><td>jelenleg (2026.11)</td><td>2×3</td><td>1×¼ reggel</td><td>Hepa-Pet, Simparica; Ursofalk lezárult</td></tr>
-        </table>
+      <details class="history"><summary>Dózistörténet és elektrolitok 2025.05 óta</summary>
+        <div style="overflow-x:auto"><table class="data-table dose-tbl"><tr><th>Dózis-időszak</th><th>Astonin</th><th>Predni</th><th>Labor</th><th>Na<br><small>135–155</small></th><th>K<br><small>3,6–5,6</small></th><th>Na/K<br><small>28,8–40</small></th><th>Cl<br><small>100–116</small></th></tr>
+          <tr><td rowspan="4">2025.05.22 →<br><small>Addison-diagnózis, induló dózis</small></td><td rowspan="4">2×1,75</td><td rowspan="4">2×½</td><td>05.22 <small>kezelés előtt</small></td><td class="val-crit">111</td><td class="val-crit">7,44</td><td class="val-crit">14,92</td><td class="val-crit">84</td></tr>
+          <tr><td>05.30</td><td class="val-ok">137</td><td class="val-ok">5,00</td><td class="val-low">27,40</td><td class="val-ok">105</td></tr>
+          <tr><td>06.27</td><td class="val-low">133</td><td class="val-ok">5,32</td><td class="val-low">25,00</td><td class="val-low">97</td></tr>
+          <tr><td>08.08</td><td class="val-low">127</td><td class="val-ok">4,6</td><td class="val-low">27,6</td><td class="val-low">92</td></tr>
+          <tr><td rowspan="2">2025.08.08 →<br><small>emelés Na 127 miatt</small></td><td rowspan="2">2×2</td><td rowspan="2">2×½</td><td>09.03</td><td class="val-low">130</td><td class="val-ok">5,17</td><td class="val-low">25,15</td><td class="val-low">96</td></tr>
+          <tr><td>11.22 <small>2 nappal az emelés után</small></td><td class="val-low">128</td><td class="val-ok">5,01</td><td class="val-low">25,55</td><td class="val-low">94</td></tr>
+          <tr><td rowspan="2">2025.11.20 →<br><small>újabb emelés</small></td><td rowspan="2">2×2,25</td><td rowspan="2">2×½</td><td>02.09</td><td class="val-ok">148 ✓</td><td class="val-ok">4,14</td><td class="val-ok">35,75</td><td class="val-low">88</td></tr>
+          <tr><td>02.27</td><td class="val-low">129</td><td class="val-ok">4,83</td><td class="val-low">26,71</td><td class="val-low">95</td></tr>
+          <tr><td>~2026.03 (1 hét)<br><small>predni leépítés, Ursofalk 2×½ indul</small></td><td>2×2,5</td><td>1×½</td><td colspan="5"><small>nem volt labor</small></td></tr>
+          <tr><td>~2026.03 közepe →<br><small>predni elhagyva; első napon remegés, lihegés → ½ tünetekre</small></td><td>2×3</td><td>—</td><td colspan="5"><small>nem volt labor</small></td></tr>
+          <tr><td rowspan="2">~2026.04 eleje →<br><small>¼ predni visszavezetve az Ursofalk-kúra közepétől; Ursofalk 04-ben lezárult</small></td><td rowspan="2">2×3</td><td rowspan="2">1×¼</td><td>05.16</td><td class="val-low">128</td><td class="val-ok">4,89</td><td class="val-low">26,18</td><td class="val-low">97</td></tr>
+          <tr><td>07.03</td><td class="val-low">127</td><td class="val-ok">5,07</td><td class="val-low">25,05</td><td class="val-low">96</td></tr>
+          <tr><td>jelenleg (2026.11)</td><td>2×3</td><td>1×¼</td><td colspan="5"><small>07.03 óta nincs újabb labor</small></td></tr>
+        </table></div>
+        <div class="note-box warn">Az Astonin 2×1,75-ről 2×3-ra nőtt, a nátrium közben 127–133 között maradt (egyetlen normál érték: 148, 2026.02.09). A kálium végig normál, a Na/K és a klorid a nátriummal együtt tartósan alacsony. <span style="color:var(--crit)">Piros</span> = kritikus, <span style="color:var(--low)">kék</span> = referencia alatt, <span style="color:var(--ok)">zöld</span> = normál.</div>
       </details>
     </div>
     <div class="card">
