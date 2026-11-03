@@ -143,7 +143,7 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
 .bar.normal { background:linear-gradient(180deg,var(--green),rgba(74,222,128,0.4)); }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
 .bar-value { font-family:var(--font-mono); font-size:0.68rem; font-weight:600; margin-bottom:4px; white-space:nowrap; }
-.bar-label { font-size:0.62rem; color:var(--text-muted); margin-top:6px; white-space:nowrap; position:absolute; bottom:-24px; }
+.bar-label { font-size:0.58rem; font-family:var(--font-mono); color:var(--text-muted); white-space:nowrap; position:absolute; top:100%; right:50%; transform:translateX(4px) rotate(-55deg); transform-origin:top right; margin-top:8px; }
 .ref-band { position:absolute; left:0; right:0; background:rgba(74,222,128,0.06); border-top:1px dashed rgba(74,222,128,0.3); border-bottom:1px dashed rgba(74,222,128,0.3); pointer-events:none; }
 .ref-label { position:absolute; right:4px; font-size:0.6rem; color:var(--green); font-family:var(--font-mono); opacity:0.7; }
 
@@ -166,7 +166,8 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
   <div class="header-top">
     <div class="header-title">
       <h1>Axel — Klinikai Dashboard</h1>
-      <div class="subtitle">Angol cocker spániel · Hím · Szül: 2021.01.01 · Chip: 992003000090428 · Tulajdonos: Salamon Imre</div>
+      <div class="subtitle">Angol cocker spániel · Hím · Szül: 2021.01.01 · Chip: 992003000090428 · PraxisLab ID: 429042 · Tulajdonos: Salamon Imre</div>
+      <div class="subtitle" style="margin-top:6px;font-size:0.82rem">Frissítve: 2026.11.03 · Utolsó labor: 2026.07.03 (PraxisLab R_65860022) · Kezelőorvos: Dr. Szepes Orsolya (Boxi Állatorvosi Rendelő)</div>
     </div>
     <div class="patient-badge">
       <span class="badge addison"><span class="dot"></span>Addison-kór (2025.05)</span>
@@ -224,6 +225,33 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
     <div class="diagnosis-item"><span class="diag-date">2026.02.21</span><div class="diag-content"><div class="diag-title" style="color:var(--red)">Bélsár okkult vér — POZITÍV</div><div class="diag-detail">IDEXX Németország. Pozitív. Húsmentes diéta nélkül álpozitív lehetséges.</div></div></div>
 
     <div class="diagnosis-item"><span class="diag-date">2026.02.27</span><div class="diag-content"><div class="diag-title" style="color:var(--amber)">Kontroll labor — kreatinin javult, Na visszaesett</div><div class="diag-detail">Kreatinin 55 ✓ (feb. 9-én 5 volt!). Na 129↓↓ visszaesett (148 volt). Cl 95↓, Ca 2,46↓. Thrombocytosis 482↑, makrothrombocyták. Lipaemia: normál (korábban súlyos). Eosinofil tartósan 0. Neutrofília 10,5↑.</div></div></div>
+
+    <div class="diagnosis-item"><span class="diag-date">~2026.03 eleje</span><div class="diag-content"><div class="diag-title" style="color:var(--green)">Terápiamódosítás — prednizolon leépítése, Astonin emelés, Ursofalk indítás</div><div class="diag-detail">Dr. Szepes O. (Dr. Csöndes J. egyetértésével): 1 hét Astonin 2×2,5 + prednizolon 1×0,5 reggel, majd Astonin 2×3, prednizolon elhagyva. Indok: hyponatraemia/hypochloraemia, bélsár okkult vér, mucocele. Ursofalk 2×½ kapszula a mucocele miatt. Terv: okkult vér kontroll, ha tartósan pozitív → GI-panendoszkópia.</div></div></div>
+
+    <div class="diagnosis-item"><span class="diag-date">~2026.03 közepe</span><div class="diag-content"><div class="diag-title" style="color:var(--amber)">Első prednizolonmentes nap — átmeneti tünetek</div><div class="diag-detail">Estére remegés, szokatlan fekvőhelyek, lihegés, meleg test, ismétlődő fejrángás (izomgörcs-szerű). Étvágy és játékkedv megtartott. Orvosi javaslatra ½ tbl prednizolon. Felmerült: glükokortikoid-megvonás ± elektrolit-eltolódás (Na↓, Ca↓).</div></div></div>
+
+    <div class="diagnosis-item"><span class="diag-date">2026.05.16</span><div class="diag-content"><div class="diag-title" style="color:var(--green)">Kontroll labor — fehérjék és koleszterin normalizálódtak, Na továbbra is alacsony</div><div class="diag-detail">Albumin 27,4 ✓ (23,4 volt), összfehérje 57 ✓ (52 volt), koleszterin 6,8↑ (1,1 volt!), kreatinin 63 ✓, CRP nem det. Na 128↓↓, Cl 97↓, Na/K 26,18↓, Ca 2,39↓. Vérkép normál (Hb 149, Htk 43,7, Fvs 9,6, Thr 370 ✓). Eosinofil 0,00↓. Validáló (Dr. Mester L.): mérsékelt hyponatraemia → gyógyszerszint-beállítás; normál fehérjeszintek.</div></div></div>
+
+    <div class="diagnosis-item"><span class="diag-date">2026.07.02</span><div class="diag-content"><div class="diag-title" style="color:var(--purple)">Bőrdaganat eltávolítása — Boxi</div><div class="diag-detail">Egyszerű, kis méretű bőrdaganat sebészi eltávolítása szedációban (Atipam antidotum, Meloxidyl NSAID), vénakanül, vérvétel. Szövettani eredmény a dokumentumok között nem található — rákérdezni.</div></div></div>
+
+    <div class="diagnosis-item"><span class="diag-date">2026.07.03</span><div class="diag-content"><div class="diag-title" style="color:var(--amber)">Kontroll labor — Na 127, Astonin 2×3 mellett sem javul</div><div class="diag-detail">Na 127↓↓, K 5,07, Na/K 25,05↓, Cl 96↓, Ca 2,40↓, Mg 0,80 ✓, P 1,4 ✓, kreatinin 63 ✓. Vérkép: Hb 143, Htk 43,1, Fvs 11,9 ✓, neutrofil 9,30↑ (enyhe), eosinofil 0,10 (megjelent), Thr 404 ✓ (482 volt), retikulocita 57,1 ✓. Lipaemia normál. Fehérjepanel nem készült. Validáló (Hármasi M. Dr.): hyponatraemia → gyógyszerszint-beállítás megfontolandó.</div></div></div>
+
+    <div class="diagnosis-item"><span class="diag-date">2026.09.15</span><div class="diag-content"><div class="diag-title">Simparica Trio — folyamatos havi parazitaellenes kezelés</div><div class="diag-detail">Boxi igazolás: a készítményt havonta, az év 12 hónapjában folyamatosan kapja.</div></div></div>
+  </div>
+</div>
+
+<div class="summary-grid">
+  <div class="summary-card full-width">
+    <h3>Nyitott kérdések az állatorvos számára (tulajdonosi összefoglaló)</h3>
+    <div class="flag-item critical"><span class="flag-label">Na-rezisztencia</span> Astonin 2×1,75 → 2×3 (≈+70%) 2025.05 óta, Na mégis 127–133 között (egyszer 148). Felszívódási zavar? Bélen keresztüli vesztés? Gyógyszerszint / alternatív mineralokortikoid (pl. DOCP)?</div>
+    <div class="flag-item warning"><span class="flag-label">Kálcium</span> Tartósan referencia alatt: 2,23 → 2,46 → 2,39 → 2,40 (02.09→07.03). Ionizált Ca mérés indokolt? Albumin-korrekció?</div>
+    <div class="flag-item warning"><span class="flag-label">Fehérjepanel</span> 05.16-án normalizálódott (alb 27,4, koleszterin 6,8), 07.03-án nem készült. Kontroll albumin / koleszterin / összfehérje kérése.</div>
+    <div class="flag-item warning"><span class="flag-label">Okkult vér</span> 02.21-én pozitív. A tervezett kontroll a prednizolon elhagyása után nem dokumentált. Ha pozitív marad → GI-panendoszkópia (terv szerint).</div>
+    <div class="flag-item warning"><span class="flag-label">Mucocele</span> 02.17-i UH óta nincs kontroll képalkotás. Ursofalk hatásának UH kontrollja?</div>
+    <div class="flag-item info"><span class="flag-label">Felszívódás</span> Kobalamin (B12) / folsav szint mérés a malabszorpció kizárására?</div>
+    <div class="flag-item info"><span class="flag-label">Só-kiegészítés</span> Jelenleg nem kap extra sót. Konyhasó az ételbe — dózis egyeztetendő (K 5,07, ref. felső fele).</div>
+    <div class="flag-item info"><span class="flag-label">Szövettan</span> A 07.02-én eltávolított bőrdaganat szövettani eredménye hiányzik a dokumentációból.</div>
+    <div class="flag-item info"><span class="flag-label">Csípő</span> Bilat. dysplasia — protézis-műtét döntés függőben; előfeltétel friss labor + hasi/szív UH (2025.10 javaslat).</div>
   </div>
 </div>
 
@@ -231,22 +259,26 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
 <div class="summary-grid">
   <div class="summary-card">
     <h3>Kritikus / Figyelemre Méltó</h3>
-    <div class="flag-item ok"><span class="flag-label">Kreatinin</span> 55 µmol/L ✓ (02.27) — normalizálódott! (02.09-én 5 volt)</div>
-    <div class="flag-item critical"><span class="flag-label">Nátrium</span> 129↓↓ (02.27) — visszaesett (02.09-én 148 ✓ volt). Mineralokortikoid-dózis!</div>
-    <div class="flag-item critical"><span class="flag-label">Koleszterin</span> 1,1 mmol/L (02.09, ref: 3,2–6,2) — nincs friss adat, de utolsó érték kritikus</div>
-    <div class="flag-item critical"><span class="flag-label">Okkult vér</span> Pozitív (02.21) — GI vérzés kérdéses</div>
-    <div class="flag-item warning"><span class="flag-label">Albumin</span> 23,4 (02.09) → csökkenő (40,5 jún. → 31,1 aug. → 23,4 feb.)</div>
-    <div class="flag-item warning"><span class="flag-label">Na/K arány</span> 26,71↓ (02.27) — ismét határ alatt</div>
-    <div class="flag-item warning"><span class="flag-label">Klorid</span> 95↓ (02.27) — javult (88 volt), de tartósan alacsony</div>
-    <div class="flag-item warning"><span class="flag-label">Thrombocyta</span> 482↑ + makrothrombocyták (02.27) — új lelet</div>
-    <div class="flag-item info"><span class="flag-label">Lipaemia</span> Normál (02.27) — korábban súlyos volt</div>
+    <div class="flag-item critical"><span class="flag-label">Nátrium</span> 127↓↓ (07.03) — Astonin 2×3 mellett sem javul. Trend: 129 → 128 → 127 (02.27 → 05.16 → 07.03). Ref: 135–155</div>
+    <div class="flag-item warning"><span class="flag-label">Na/K arány</span> 25,05↓ (07.03) — tartósan referencia alatt (ref: 28,8–40)</div>
+    <div class="flag-item warning"><span class="flag-label">Klorid</span> 96↓ (07.03) — tartósan alacsony (88 → 95 → 97 → 96)</div>
+    <div class="flag-item warning"><span class="flag-label">Kálcium</span> 2,40↓ (07.03) — 4 egymást követő mérés referencia alatt (ref: 2,50–3,10)</div>
+    <div class="flag-item warning"><span class="flag-label">Okkult vér</span> Pozitív (02.21) — kontroll nem dokumentált</div>
+    <div class="flag-item warning"><span class="flag-label">Eosinofil</span> 0,00 (02.27, 05.16) → 0,10 (07.03) — prednizolon elhagyása után jelent meg</div>
+    <div class="flag-item ok"><span class="flag-label">Albumin</span> 27,4 ✓ (05.16) — normalizálódott (23,4 volt 02.09). 07.03-án nem mérték</div>
+    <div class="flag-item ok"><span class="flag-label">Koleszterin</span> 6,8 (05.16, enyhén ref. felett) — 1,1-ről drámai javulás. 07.03-án nem mérték</div>
+    <div class="flag-item ok"><span class="flag-label">Kreatinin</span> 63 ✓ (05.16 és 07.03) — stabil; a 02.09-i 5-ös érték labortechnikai hiba volt</div>
+    <div class="flag-item ok"><span class="flag-label">Thrombocyta</span> 404 ✓ (07.03) — normalizálódott (482↑ volt 02.27)</div>
+    <div class="flag-item ok"><span class="flag-label">Vérkép</span> Hb 143, Htk 43,1, Fvs 11,9 (07.03) — normál. CRP nem det. (05.16)</div>
+    <div class="flag-item ok"><span class="flag-label">Lipaemia</span> Normál (02.27, 05.16, 07.03) — korábban súlyos volt</div>
   </div>
   <div class="summary-card">
     <h3>Képalkotó & Egyéb Leletek</h3>
     <div class="flag-item warning"><span class="flag-label">Csípő</span> Bilat. súlyos dysplasia, arthrosis, Morgan vonal</div>
     <div class="flag-item warning"><span class="flag-label">Epehólyag</span> Mucocele — kezdődő stádium, sludge</div>
     <div class="flag-item warning"><span class="flag-label">Vesék</span> Policisztás elfajulás, fokozott echogenitás</div>
-    <div class="flag-item info"><span class="flag-label">Kortizol</span> Szept-ben normalizálódott (42,2) pótlás mellett</div>
+    <div class="flag-item info"><span class="flag-label">Bőrdaganat</span> Eltávolítva 2026.07.02 (kis, egyszerű) — szövettan ismeretlen</div>
+    <div class="flag-item info"><span class="flag-label">Kortizol</span> 2025.09-ben normál (42,2) pótlás mellett — azóta nem mérték</div>
     <div class="flag-item info"><span class="flag-label">Prosztata</span> Megkisebbedett, csökkent intenzitás</div>
     <div class="flag-item ok"><span class="flag-label">Máj / Lép</span> Normál — enzimek konzisztensen normál</div>
     <div class="flag-item ok"><span class="flag-label">Mellékvesék</span> UH-n normál méret/szerkezet</div>
@@ -255,13 +287,31 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
 
 <div class="summary-grid">
   <div class="summary-card full-width">
-    <h3>Aktuális Gyógyszeres Kezelés — Addison-pótlás</h3>
+    <h3>Gyógyszeres Kezelés — Addison-pótlás és kísérő terápia</h3>
     <div class="diagnosis-item"><span class="diag-date">2025.05.22–</span><div class="diag-content"><div class="diag-title">Astonin 2×1,75 tbl + Prednizolon 2×0,5 tbl</div><div class="diag-detail">Addison-diagnózis utáni induló dózis.</div></div></div>
     <div class="diagnosis-item"><span class="diag-date">2025.08.08–</span><div class="diag-content"><div class="diag-title">Astonin 2×2 tbl + Prednizolon 2×0,5 tbl</div><div class="diag-detail">Emelés — Na tartósan alacsony maradt (127↓↓ aug.).</div></div></div>
-    <div class="diagnosis-item"><span class="diag-date">2025.11.20–</span><div class="diag-content"><div class="diag-title" style="color:var(--amber)">Astonin 2×2,25 tbl + Prednizolon 2×0,5 tbl ← jelenlegi</div><div class="diag-detail">Újabb emelés. Ennek ellenére Na 02.27-én ismét 129↓↓ — mineralokortikoid-pótlás továbbra sem optimális.</div></div></div>
-    <div class="note-box warn">Emelkedő Astonin-trend: 2×1,75 → 2×2 → 2×2,25 tbl. A Na instabilitása (148 ✓ → 129↓↓ 18 nap alatt) a jelenlegi dózisnál is fennáll.</div>
+    <div class="diagnosis-item"><span class="diag-date">2025.11.20–</span><div class="diag-content"><div class="diag-title">Astonin 2×2,25 tbl + Prednizolon 2×0,5 tbl</div><div class="diag-detail">Újabb emelés. Na 02.09-én 148 ✓, 02.27-én ismét 129↓↓.</div></div></div>
+    <div class="diagnosis-item"><span class="diag-date">~2026.03 eleje</span><div class="diag-content"><div class="diag-title">Átmenet (1 hét): Astonin 2×2,5 tbl + Prednizolon 1×0,5 reggel</div><div class="diag-detail">Prednizolon leépítése — indok: bélsár okkult vér, mucocele. Ursofalk 2×½ kapszula indítva.</div></div></div>
+    <div class="diagnosis-item"><span class="diag-date">~2026.03 közepe–</span><div class="diag-content"><div class="diag-title" style="color:var(--amber)">Astonin 2×3 tbl · Prednizolon elhagyva · Ursofalk 2×½ kapszula ← utolsó ismert séma</div><div class="diag-detail">Astonin (fludrokortizon) gyenge glükokortikoid hatására hagyatkozva. Ennek ellenére Na 128↓↓ (05.16) és 127↓↓ (07.03). A jelenlegi séma az állatorvossal egyeztetendő/megerősítendő.</div></div></div>
+    <div class="diagnosis-item"><span class="diag-date">2026.02.17–</span><div class="diag-content"><div class="diag-title">Hepa-Pet Plus 700 mg</div><div class="diag-detail">FuzioVet UH után felírt májvédő (mucocele / sludge).</div></div></div>
+    <div class="diagnosis-item"><span class="diag-date">folyamatos</span><div class="diag-content"><div class="diag-title">Simparica Trio — havonta</div><div class="diag-detail">Parazitaellenes, az év 12 hónapjában (Boxi igazolás 2026.09.15).</div></div></div>
+
+    <div class="subsection-title">Nátrium az Astonin-dózis függvényében</div>
+    <table class="data-table"><tr><th>Dátum</th><th>Astonin</th><th>Prednizolon</th><th>Na (ref 135–155)</th><th>K</th><th>Na/K</th><th>Cl</th></tr>
+      <tr><td>2025.06.27</td><td>2×1,75</td><td>2×0,5</td><td class="val-low">133</td><td>5,32</td><td class="val-low">25,00</td><td class="val-low">97</td></tr>
+      <tr><td>2025.08.08</td><td>2×1,75 → 2×2</td><td>2×0,5</td><td class="val-crit">127</td><td>4,6</td><td>27,6</td><td class="val-crit">92</td></tr>
+      <tr><td>2025.09.03</td><td>2×2</td><td>2×0,5</td><td class="val-low">130</td><td>5,17</td><td class="val-low">25,15</td><td class="val-low">96</td></tr>
+      <tr><td>2025.11.22</td><td>2×2 → 2×2,25</td><td>2×0,5</td><td class="val-low">128</td><td>5,01</td><td class="val-low">25,55</td><td class="val-low">94</td></tr>
+      <tr><td>2026.02.09</td><td>2×2,25</td><td>2×0,5</td><td class="val-ok">148 ✓</td><td>4,14</td><td class="val-ok">35,75</td><td class="val-crit">88</td></tr>
+      <tr><td>2026.02.27</td><td>2×2,25</td><td>2×0,5</td><td class="val-low">129</td><td>4,83</td><td class="val-low">26,71</td><td class="val-low">95</td></tr>
+      <tr><td>2026.05.16</td><td>2×3</td><td>—</td><td class="val-low">128</td><td>4,89</td><td class="val-low">26,18</td><td class="val-low">97</td></tr>
+      <tr><td>2026.07.03</td><td>2×3</td><td>—</td><td class="val-crit">127</td><td>5,07</td><td class="val-low">25,05</td><td class="val-low">96</td></tr>
+    </table>
+    <div class="note-box warn">Az Astonin-dózis 2025.05 óta ≈70%-kal emelkedett (2×1,75 → 2×3), a nátrium ezalatt 127–133 között stagnál (egyetlen normál érték: 148, 2026.02.09). A prednizolon elhagyása (2026.03) óta két mérés: 128, 127. A dózis-válasz hiánya önmagában is kivizsgálást indokolhat (felszívódás, bélen keresztüli vesztés, gyógyszerszint).</div>
   </div>
 </div>
+
+<div class="note-box" style="margin-top:4px;font-size:0.8rem">Adatforrások: PraxisLab (Boxi Állatorvosi Rendelő, Focus-Vet), Vet-Med-Labor, FuzioVet Állatkórház, IDEXX Kornwestheim leletei és kezelési lapjai. A számszerű értékek a leletekből származnak; az összegző megjegyzések és a "nyitott kérdések" tulajdonosi összefoglalók, nem állatorvosi diagnózisok. A ~ jelölésű dátumok hozzávetőlegesek.</div>
 </section>
 
 <!-- ═══ TIMELINE ═══ -->
@@ -393,6 +443,48 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
     <div class="tl-title">Kontroll labor — kreatinin javult, Na visszaesett</div>
     <div class="tl-desc">Kreatinin 55 ✓ (02.09-én 5 volt — drámai javulás). Na 129↓↓ visszaesett (02.09-én 148 ✓). Na/K 26,71↓. Cl 95↓ (javult a 88-ról). Ca 2,46↓. Thrombocytosis 482↑, makrothrombocyták. Neutrofília 10,5↑, eosinofil tartósan 0. Lipaemia normál! Vérkép: Hb 145 ✓, Htk 43,1 ✓, Fvs 12,5 ✓. Retikulocita 67,4↑.</div>
     <span class="tl-tag lab">Labor</span>
+  </div>
+
+  <div class="tl-item"><div class="tl-dot"></div>
+    <div class="tl-date">~2026. március eleje</div>
+    <div class="tl-title">Terápiamódosítás — prednizolon leépítés, Astonin emelés, Ursofalk</div>
+    <div class="tl-desc">Dr. Szepes Orsolya (Dr. Csöndes Judit egyetértésével): 1 hét Astonin 2×2,5 + prednizolon 1×0,5 reggel, utána Astonin 2×3, prednizolon elhagyva. Indok: hyponatraemia + hypochloraemia, bélsár okkult vér, epehólyag mucocele (szteroid mindkettőt ronthatja). Ursofalk 2×½ kapszula indítva. Terv: okkult vér kontroll → ha tartósan pozitív, GI-panendoszkópia.</div>
+    <span class="tl-tag treat">Kezelés</span>
+  </div>
+
+  <div class="tl-item warning"><div class="tl-dot"></div>
+    <div class="tl-date">~2026. március közepe</div>
+    <div class="tl-title">Első prednizolonmentes nap — átmeneti tünetek</div>
+    <div class="tl-desc">Astonin 2×3 + Ursofalk 2×½ első napján estére remegés, szokatlan fekvőhelyek, lihegés, meleg test, ismétlődő fejrángás (izomgörcs-szerű). Étvágy, játékkedv megtartott. Orvosi javaslatra ½ tbl prednizolon. Felmerült ok: glükokortikoid-megvonás ± elektrolit-eltolódás (Na↓, Ca↓).</div>
+    <span class="tl-tag treat">Tünet</span>
+  </div>
+
+  <div class="tl-item"><div class="tl-dot"></div>
+    <div class="tl-date">2026. május 16.</div>
+    <div class="tl-title">Kontroll labor — fehérjék normalizálódtak, Na tartósan alacsony</div>
+    <div class="tl-desc">Albumin 27,4 ✓ (23,4-ről), összfehérje 57 ✓, globulin 29,6 ✓, koleszterin 6,8↑ (1,1-ről!), kreatinin 63 ✓, karbamid 6,0 ✓, májenzimek normál, lipáz 21 ✓, CRP nem det. Na 128↓↓, K 4,89, Na/K 26,18↓, Cl 97↓, Ca 2,39↓, P 1,0. Vérkép: Hb 149, Htk 43,7, Fvs 9,6, Thr 370 ✓ (makrothrombocyta +++), eosinofil 0,00↓, retikulocita 53,3 ✓. Lipaemia normál. Validáló: Dr. Mester László — mérsékelt hyponatraemia, gyógyszerszint-beállítás; normál fehérjeszintek.</div>
+    <span class="tl-tag lab">Labor</span>
+  </div>
+
+  <div class="tl-item surgery"><div class="tl-dot"></div>
+    <div class="tl-date">2026. július 2.</div>
+    <div class="tl-title">Bőrdaganat eltávolítása — Boxi</div>
+    <div class="tl-desc">Egyszerű, kis méretű bőrdaganat sebészi eltávolítása szedációban (Atipam antidotum, Meloxidyl 5 mg/ml inj.). Vénakanül, vérvétel labor felé. Szövettani eredmény a dokumentumok között nem található.</div>
+    <span class="tl-tag img">Műtét</span>
+  </div>
+
+  <div class="tl-item warning"><div class="tl-dot"></div>
+    <div class="tl-date">2026. július 3.</div>
+    <div class="tl-title">Kontroll labor — Na 127, Astonin 2×3 mellett</div>
+    <div class="tl-desc">Na 127↓↓, K 5,07, Na/K 25,05↓, Cl 96↓, Ca 2,40↓, Mg 0,80 ✓, P 1,4 ✓, kreatinin 63 ✓. Vérkép: Hb 143, Htk 43,1, Fvs 11,9 ✓, neutrofil 9,30↑ (enyhe), eosinofil 0,10 (prednizolon elhagyása után megjelent), Thr 404 ✓, retikulocita 57,1 ✓. Lipaemia normál. Fehérjepanel nem készült. Validáló: Hármasi Marietta Dr. — hyponatraemia okán gyógyszerszint-beállítás megfontolandó.</div>
+    <span class="tl-tag lab">Labor</span>
+  </div>
+
+  <div class="tl-item"><div class="tl-dot"></div>
+    <div class="tl-date">2026. szeptember 15.</div>
+    <div class="tl-title">Simparica Trio igazolás — Boxi</div>
+    <div class="tl-desc">Folyamatos havi parazitaellenes kezelés az év 12 hónapjában (kiadáshoz szóló igazolás).</div>
+    <span class="tl-tag treat">Kezelés</span>
   </div>
 
 </div>
@@ -691,12 +783,128 @@ header { padding:40px 0 0; border-bottom:1px solid var(--border); }
   <div class="note-box">Kreatinin drámaian javult (5 → 55), sarcopenia javulhat. Na visszaesett — mineralokortikoid-dózis felülvizsgálat szükséges. Makrothrombocyták reaktív thrombocytosisra utalhatnak.</div>
 </div></div></div>
 
+<!-- V16: 03 terápiaváltás -->
+<div class="visit-card"><div class="visit-header" onclick="toggleVisit(this)"><div class="visit-left"><span class="visit-date">~2026.03</span><div><span class="visit-title">Terápiamódosítás — prednizolon leépítés, Astonin 2×3, Ursofalk</span><br><span class="visit-provider">Boxi · Dr. Szepes Orsolya · konzultáció: Dr. Csöndes Judit</span></div></div><svg class="visit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="visit-body"><div class="visit-body-inner">
+  <div class="subsection-title">Orvosi javaslat (írásban)</div>
+  <table class="data-table"><tr><th>Szakasz</th><th>Astonin</th><th>Prednizolon</th><th>Ursofalk</th></tr>
+    <tr><td>Előzmény (2025.11.20-tól)</td><td>2×2,25</td><td>2×½</td><td>—</td></tr>
+    <tr><td>1. hét (átmenet)</td><td>2×2,5</td><td>1×½ reggel</td><td>2×½ kapszula</td></tr>
+    <tr><td>2. héttől</td><td><strong>2×3</strong></td><td class="val-high">elhagyva</td><td>2×½ kapszula</td></tr>
+  </table>
+  <div class="note-box">Indoklás: Astonin emelés a hyponatraemia és hypochloraemia miatt; az Astoninnak glükokortikoid hatása is van. A bélsárban lévő vér és a mucocele miatt a prednizolon elhagyása javasolt. Mucocele miatt Ursofalk. Bélsár okkult vér kontroll ajánlott; tartós vérürítés esetén GI-panendoszkópia.</div>
+  <div class="subsection-title">Megfigyelés — első prednizolonmentes nap</div>
+  <p style="font-size:0.88rem;color:var(--text-dim)">Estére remegés, szokatlan helyekre fekvés, lihegés, meleg test, ismétlődő fel-le fejmozgás (izomgörcs-szerű). Étvágy és játékkedv megtartott (csökkent intenzitással). Orvosi javaslatra ½ tbl prednizolon adva.</p>
+  <div class="note-box warn">Differenciál (tulajdonosi megjegyzés): glükokortikoid-megvonási tünetek; elektrolit-eltolódás (Na 129↓↓ és Ca 2,46↓ volt 02.27-én). Lassabb leépítés / ionizált Ca mérés kérdése felmerült.</div>
+</div></div></div>
+
+<!-- V17: 05.16 -->
+<div class="visit-card"><div class="visit-header" onclick="toggleVisit(this)"><div class="visit-left"><span class="visit-date">2026.05.16</span><div><span class="visit-title">Kontroll labor — kis rutin vérképpel</span><br><span class="visit-provider">Boxi · Dr. Szepes Orsolya · PraxisLab R_12286094 · Dr. Mester László</span></div></div><svg class="visit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="visit-body"><div class="visit-body-inner">
+  <div class="subsection-title">Vérkép</div>
+  <table class="data-table"><tr><th>Vizsgálat</th><th>Eredmény</th><th>Ref.</th><th></th></tr>
+    <tr><td>Vvs</td><td>6,65</td><td>5,50–8,50</td><td class="val-ok">✓</td></tr>
+    <tr><td>Hb</td><td>149</td><td>120–180</td><td class="val-ok">✓</td></tr>
+    <tr><td>Htk</td><td>43,7%</td><td>38–57</td><td class="val-ok">✓</td></tr>
+    <tr><td>Fvs</td><td>9,6</td><td>6,0–15,0</td><td class="val-ok">✓</td></tr>
+    <tr><td>Neutrofil</td><td>6,50</td><td>4,3–9,0</td><td class="val-ok">✓</td></tr>
+    <tr><td>Lymphocyta</td><td>2,30</td><td>0,50–4,50</td><td class="val-ok">✓</td></tr>
+    <tr><td>Monocyta</td><td>0,80</td><td>0,25–1,00</td><td class="val-ok">✓</td></tr>
+    <tr><td>Eosinofil</td><td class="val-low">0,00</td><td>0,10–1,20</td><td>↓</td></tr>
+    <tr><td>Thrombocyta</td><td>370</td><td>150–450</td><td class="val-ok">✓ (makrothrombocyta +++)</td></tr>
+    <tr><td>Retikulocita</td><td>53,3</td><td>&lt;60</td><td class="val-ok">✓</td></tr>
+  </table>
+  <div class="subsection-title">Klinikai kémia</div>
+  <table class="data-table"><tr><th>Vizsgálat</th><th>Eredmény</th><th>Ref.</th><th>02.09–02.10</th></tr>
+    <tr><td>Összfehérje</td><td class="val-ok">57 ✓</td><td>55–75</td><td class="val-low">52</td></tr>
+    <tr><td>Albumin</td><td class="val-ok">27,4 ✓</td><td>25,0–41,0</td><td class="val-low">23,4</td></tr>
+    <tr><td>Globulin</td><td>29,6</td><td>20,0–45,0</td><td>28,6</td></tr>
+    <tr><td>A/G arány</td><td>0,93</td><td>0,60–1,50</td><td></td></tr>
+    <tr><td>Koleszterin</td><td class="val-high">6,8</td><td>3,2–6,2</td><td class="val-crit">1,1</td></tr>
+    <tr><td>Glükóz (NaF)</td><td>4,9</td><td>2,8–4,9</td><td class="val-ok">felső határ</td></tr>
+    <tr><td>Karbamid</td><td>6,0</td><td>2,5–6,7</td><td class="val-ok">✓</td></tr>
+    <tr><td>Kreatinin</td><td class="val-ok">63 ✓</td><td>20–150</td><td class="val-crit">5</td></tr>
+    <tr><td>ALT / AST</td><td>34 / 19</td><td>5–60 / 10–50</td><td class="val-ok">✓</td></tr>
+    <tr><td>ALKP / GGT</td><td>76 / 3</td><td>&lt;280 / &lt;9</td><td class="val-ok">✓</td></tr>
+    <tr><td>Összbilirubin</td><td>3,2</td><td>0,1–5,1</td><td class="val-ok">✓</td></tr>
+    <tr><td>Alfa-amiláz / Lipáz (DGGR)</td><td>773 / 21</td><td>100–1200 / 8–81</td><td class="val-ok">✓</td></tr>
+    <tr><td>CRP</td><td class="val-ok">Detektálási határ alatt</td><td></td><td></td></tr>
+  </table>
+  <div class="subsection-title">Elektrolitok</div>
+  <table class="data-table"><tr><th>Vizsgálat</th><th>Eredmény</th><th>Ref.</th><th>02.27</th></tr>
+    <tr><td>Nátrium</td><td class="val-crit">128</td><td>135–155</td><td class="val-crit">129</td></tr>
+    <tr><td>Kálium</td><td>4,89</td><td>3,60–5,60</td><td class="val-ok">4,83</td></tr>
+    <tr><td>Na/K</td><td class="val-low">26,18</td><td>28,80–40</td><td class="val-low">26,71</td></tr>
+    <tr><td>Klorid</td><td class="val-low">97</td><td>100–116</td><td class="val-low">95</td></tr>
+    <tr><td>Foszfát</td><td>1,0</td><td>0,8–1,6</td><td class="val-ok">1,3</td></tr>
+    <tr><td>Kálcium</td><td class="val-low">2,39</td><td>2,50–3,10</td><td class="val-low">2,46</td></tr>
+  </table>
+  <div class="subsection-title">Minta minőség</div>
+  <table class="data-table"><tr><th>Index</th><th>Eredmény</th></tr>
+    <tr><td>Hemolízis / Ikterusz / Lipaemia</td><td class="val-ok">NORMÁL / NORMÁL / NORMÁL</td></tr>
+  </table>
+  <div class="note-box"><strong>Dr. Mester László (validáló):</strong> Mérsékelt fokú hyponatremia miatt gyógyszerszint beállítás, klinikai képpel összevetés javasolt. Normál fehérjeszintek.</div>
+  <div class="note-box warn">Tulajdonosi megjegyzés: a 02.09-i súlyos hypoalbuminaemia / hypocholesterinaemia 3 hónap alatt normalizálódott (étrend-módosítás + prednizolon elhagyása időszakában). A Na viszont a 2×3 Astonin mellett sem javult.</div>
+</div></div></div>
+
+<!-- V18: 07.02 műtét -->
+<div class="visit-card"><div class="visit-header" onclick="toggleVisit(this)"><div class="visit-left"><span class="visit-date">2026.07.02</span><div><span class="visit-title" style="color:var(--purple)">Bőrdaganat eltávolítása + vérvétel</span><br><span class="visit-provider">Boxi · Dr. Szepes Orsolya · számla T-2026/003609</span></div></div><svg class="visit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="visit-body"><div class="visit-body-inner">
+  <table class="data-table"><tr><th>Tétel</th><th>Megjegyzés</th></tr>
+    <tr><td>Műtét: bőrdaganat eltávolítása, egyszerű, kis méretű</td><td>Szövettani eredmény a dokumentációban nincs</td></tr>
+    <tr><td>Atipam inj. (4×0,1 ml)</td><td>Atipamezol — α2-agonista szedáció (medetomidin/dexmedetomidin) antidotuma → szedációban végzett beavatkozás</td></tr>
+    <tr><td>Meloxidyl 5 mg/ml inj. (0,6 ml)</td><td>Meloxicam NSAID — fájdalomcsillapítás</td></tr>
+    <tr><td>Vénakanül, vérvétel, labor szállítás</td><td>PraxisLab: vérkép (emlős) + elektrolit profil + biokémiai paraméter → lelet 07.03</td></tr>
+  </table>
+  <div class="note-box">Vizit összege: 75 075 Ft. Tulajdonosi megjegyzés: Addison-os betegnél szedáció/műtét kapcsán a perioperatív glükokortikoid stressz-dózis szokásos kérdés — a számlán ilyen tétel nem szerepel; a kezelőorvossal tisztázandó, hogy történt-e.</div>
+</div></div></div>
+
+<!-- V19: 07.03 -->
+<div class="visit-card"><div class="visit-header" onclick="toggleVisit(this)"><div class="visit-left"><span class="visit-date">2026.07.03</span><div><span class="visit-title" style="color:var(--amber)">Kontroll labor — elektrolit profil + vérkép</span><br><span class="visit-provider">Boxi · Dr. Szepes Orsolya · PraxisLab R_65860022 · Hármasi Marietta Dr.</span></div></div><svg class="visit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="visit-body"><div class="visit-body-inner">
+  <div class="subsection-title">Vérkép</div>
+  <table class="data-table"><tr><th>Vizsgálat</th><th>Eredmény</th><th>Ref.</th><th>05.16</th></tr>
+    <tr><td>Vvs</td><td>6,51</td><td>5,50–8,50</td><td class="val-ok">6,65</td></tr>
+    <tr><td>Hb</td><td>143</td><td>120–180</td><td class="val-ok">149</td></tr>
+    <tr><td>Htk</td><td>43,1%</td><td>38–57</td><td class="val-ok">43,7</td></tr>
+    <tr><td>Fvs</td><td>11,9</td><td>6,0–15,0</td><td class="val-ok">9,6</td></tr>
+    <tr><td>Neutrofil</td><td class="val-high">9,30</td><td>4,3–9,0</td><td class="val-ok">6,50</td></tr>
+    <tr><td>Lymphocyta</td><td>1,90</td><td>0,50–4,50</td><td class="val-ok">2,30</td></tr>
+    <tr><td>Monocyta</td><td>0,70</td><td>0,25–1,00</td><td class="val-ok">0,80</td></tr>
+    <tr><td>Eosinofil</td><td>0,10</td><td>0,10–1,20</td><td class="val-low">0,00</td></tr>
+    <tr><td>Thrombocyta</td><td>404</td><td>150–450</td><td class="val-ok">370</td></tr>
+    <tr><td>Retikulocita</td><td>57,1</td><td>&lt;60</td><td class="val-ok">53,3</td></tr>
+  </table>
+  <div class="subsection-title">Klinikai kémia</div>
+  <table class="data-table"><tr><th>Vizsgálat</th><th>Eredmény</th><th>Ref.</th><th>05.16</th></tr>
+    <tr><td>Kreatinin</td><td class="val-ok">63 ✓</td><td>20–150</td><td class="val-ok">63</td></tr>
+  </table>
+  <div class="subsection-title">Elektrolitok</div>
+  <table class="data-table"><tr><th>Vizsgálat</th><th>Eredmény</th><th>Ref.</th><th>05.16</th></tr>
+    <tr><td>Nátrium</td><td class="val-crit">127</td><td>135–155</td><td class="val-crit">128</td></tr>
+    <tr><td>Kálium</td><td>5,07</td><td>3,60–5,60</td><td class="val-ok">4,89</td></tr>
+    <tr><td>Na/K</td><td class="val-low">25,05</td><td>28,80–40</td><td class="val-low">26,18</td></tr>
+    <tr><td>Klorid</td><td class="val-low">96</td><td>100–116</td><td class="val-low">97</td></tr>
+    <tr><td>Magnézium</td><td>0,80</td><td>0,70–1,00</td><td class="val-ok">—</td></tr>
+    <tr><td>Foszfát</td><td>1,4</td><td>0,8–1,6</td><td class="val-ok">1,0</td></tr>
+    <tr><td>Kálcium</td><td class="val-low">2,40</td><td>2,50–3,10</td><td class="val-low">2,39</td></tr>
+  </table>
+  <div class="subsection-title">Minta minőség</div>
+  <table class="data-table"><tr><th>Index</th><th>Eredmény</th></tr>
+    <tr><td>Hemolízis / Ikterusz / Lipaemia</td><td class="val-ok">NORMÁL / NORMÁL / NORMÁL</td></tr>
+  </table>
+  <div class="note-box"><strong>Hármasi Marietta Dr. (validáló):</strong> Hyponatraemia okán gyógyszerszint beállítása megfontolandó.</div>
+  <div class="note-box warn">Tulajdonosi megjegyzés: a panel fehérjét/koleszterint nem tartalmazott — következő vérvételnél albumin, összfehérje, koleszterin, valamint ionizált Ca, kobalamin/folsav kérése megfontolandó.</div>
+</div></div></div>
+
+<!-- V20: 09.15 -->
+<div class="visit-card"><div class="visit-header" onclick="toggleVisit(this)"><div class="visit-left"><span class="visit-date">2026.09.15</span><div><span class="visit-title">Simparica Trio igazolás</span><br><span class="visit-provider">Boxi · Dr. Szepes Orsolya · kórlap</span></div></div><svg class="visit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="visit-body"><div class="visit-body-inner">
+  <p style="font-size:0.88rem;color:var(--text-dim)">„A fenti állat a Simparica Trio nevű készítményt folyamatosan kapja, havi rendszerességgel az év 12 hónapjában. Részére a készítményt kiadni szíveskedjenek!"</p>
+  <div class="note-box">Megjegyzés: ezen a kórlapon a születési dátum 2021.06.14 szerepel, a többi dokumentumban 2021.01.01 — a rendelői nyilvántartás javítandó.</div>
+</div></div></div>
+
 </section>
 
 <!-- ═══ LAB COMPARISON ═══ -->
 <section id="labs" class="section">
 <h2 class="section-title">Laborértékek Összehasonlítás</h2>
-<p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:24px"><span style="color:var(--green)">Zöld</span> = normál · <span style="color:var(--accent)">Kék</span> = alacsony · <span style="color:var(--red)">Piros</span> = magas/kritikus · Halvány zöld sáv = referencia tartomány</p>
+<p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:24px"><span style="color:var(--green)">Zöld</span> = normál · <span style="color:var(--accent)">Kék</span> = alacsony · <span style="color:var(--red)">Piros</span> = magas/kritikus · Halvány zöld sáv = referencia tartomány · Dátumformátum: ÉÉ.HH.NN (2025.04.25 → 2026.07.03)</p>
 <div class="chart-grid" id="chartGrid"></div>
 </section>
 
@@ -707,43 +915,48 @@ document.querySelectorAll('.nav-tab').forEach(t=>{t.addEventListener('click',()=
 
 function toggleVisit(h){const c=h.parentElement,b=c.querySelector('.visit-body');c.classList.toggle('open');b.style.maxHeight=c.classList.contains('open')?b.scrollHeight+'px':'0'}
 
+// Dátumcímkék: ÉÉ.HH.NN
 const labData=[
   {name:'Nátrium',unit:'mmol/L',refMin:135,refMax:155,values:[
-    {date:'04.25',val:145},{date:'05.22',val:111},{date:'05.30',val:137},{date:'06.27',val:133},{date:'08.08',val:127},{date:'09.03',val:130},{date:'02.09',val:148},{date:'02.27',val:129}]},
+    {date:'25.04.25',val:145},{date:'25.05.22',val:111},{date:'25.05.30',val:137},{date:'25.06.27',val:133},{date:'25.08.08',val:127},{date:'25.09.03',val:130},{date:'25.11.22',val:128},{date:'26.02.09',val:148},{date:'26.02.27',val:129},{date:'26.05.16',val:128},{date:'26.07.03',val:127}]},
   {name:'Kálium',unit:'mmol/L',refMin:3.6,refMax:5.6,values:[
-    {date:'04.25',val:5.29},{date:'05.22',val:7.44},{date:'05.30',val:5.00},{date:'06.27',val:5.32},{date:'08.08',val:4.6},{date:'09.03',val:5.17},{date:'02.09',val:4.14},{date:'02.27',val:4.83}]},
+    {date:'25.04.25',val:5.29},{date:'25.05.22',val:7.44},{date:'25.05.30',val:5.00},{date:'25.06.27',val:5.32},{date:'25.08.08',val:4.6},{date:'25.09.03',val:5.17},{date:'25.11.22',val:5.01},{date:'26.02.09',val:4.14},{date:'26.02.27',val:4.83},{date:'26.05.16',val:4.89},{date:'26.07.03',val:5.07}]},
   {name:'Na/K arány',unit:'',refMin:28.8,refMax:40,values:[
-    {date:'04.25',val:27.41},{date:'05.22',val:14.92},{date:'05.30',val:27.40},{date:'06.27',val:25.00},{date:'08.08',val:27.6},{date:'09.03',val:25.15},{date:'02.09',val:35.75},{date:'02.27',val:26.71}]},
+    {date:'25.04.25',val:27.41},{date:'25.05.22',val:14.92},{date:'25.05.30',val:27.40},{date:'25.06.27',val:25.00},{date:'25.08.08',val:27.6},{date:'25.09.03',val:25.15},{date:'25.11.22',val:25.55},{date:'26.02.09',val:35.75},{date:'26.02.27',val:26.71},{date:'26.05.16',val:26.18},{date:'26.07.03',val:25.05}]},
   {name:'Klorid',unit:'mmol/L',refMin:100,refMax:116,values:[
-    {date:'04.25',val:116},{date:'05.22',val:84},{date:'05.30',val:105},{date:'06.27',val:97},{date:'08.08',val:92},{date:'09.03',val:96},{date:'02.09',val:88},{date:'02.27',val:95}]},
-  {name:'Karbamid',unit:'mmol/L',refMin:2.5,refMax:6.7,values:[
-    {date:'04.25',val:10.3},{date:'05.22',val:16.8},{date:'05.30',val:7.4},{date:'06.27',val:8.8},{date:'08.08',val:6.1},{date:'02.09',val:7.5}]},
-  {name:'Kreatinin',unit:'µmol/L',refMin:20,refMax:150,values:[
-    {date:'04.25',val:134},{date:'05.22',val:153},{date:'05.30',val:99},{date:'06.27',val:98},{date:'02.09',val:5},{date:'02.27',val:55}]},
-  {name:'Összfehérje',unit:'g/L',refMin:55,refMax:75,values:[
-    {date:'04.25',val:66},{date:'05.22',val:65},{date:'05.30',val:66},{date:'06.27',val:73},{date:'08.08',val:62.9},{date:'02.09',val:52}]},
-  {name:'Albumin',unit:'g/L',refMin:25,refMax:41,values:[
-    {date:'04.25',val:24.3},{date:'05.22',val:27.0},{date:'05.30',val:32.0},{date:'06.27',val:40.5},{date:'08.08',val:31.1},{date:'02.09',val:23.4}]},
-  {name:'Koleszterin',unit:'mmol/L',refMin:3.2,refMax:6.2,values:[
-    {date:'04.25',val:2.1},{date:'05.22',val:2.3},{date:'05.30',val:3.4},{date:'06.27',val:4.5},{date:'02.09',val:1.1}]},
-  {name:'CRP',unit:'mg/L',refMin:0,refMax:10,values:[
-    {date:'04.25',val:60.4},{date:'05.22',val:25.6},{date:'05.30',val:0.5,label:'<det'},{date:'06.27',val:0.5,label:'<det'}]},
-  {name:'Fehérvérsejtszám',unit:'G/L',refMin:6,refMax:15,values:[
-    {date:'04.25',val:12.5},{date:'05.22',val:11.8},{date:'05.30',val:21.1},{date:'06.27',val:15.3},{date:'02.27',val:12.5}]},
-  {name:'Hemoglobin',unit:'g/L',refMin:120,refMax:180,values:[
-    {date:'04.25',val:141},{date:'05.22',val:144},{date:'05.30',val:115},{date:'06.27',val:147},{date:'02.27',val:145}]},
-  {name:'Hematokrit',unit:'%',refMin:38,refMax:57,values:[
-    {date:'04.25',val:42.9},{date:'05.22',val:39.2},{date:'05.30',val:34.3},{date:'06.27',val:42.9},{date:'02.27',val:43.1}]},
+    {date:'25.04.25',val:116},{date:'25.05.22',val:84},{date:'25.05.30',val:105},{date:'25.06.27',val:97},{date:'25.08.08',val:92},{date:'25.09.03',val:96},{date:'25.11.22',val:94},{date:'26.02.09',val:88},{date:'26.02.27',val:95},{date:'26.05.16',val:97},{date:'26.07.03',val:96}]},
   {name:'Kálcium',unit:'mmol/L',refMin:2.5,refMax:3.1,values:[
-    {date:'04.25',val:2.53},{date:'05.22',val:2.54},{date:'05.30',val:2.51},{date:'06.27',val:2.78},{date:'09.03',val:2.63},{date:'02.09',val:2.23},{date:'02.27',val:2.46}]},
+    {date:'25.04.25',val:2.53},{date:'25.05.22',val:2.54},{date:'25.05.30',val:2.51},{date:'25.06.27',val:2.78},{date:'25.09.03',val:2.63},{date:'25.11.22',val:2.55},{date:'26.02.09',val:2.23},{date:'26.02.27',val:2.46},{date:'26.05.16',val:2.39},{date:'26.07.03',val:2.40}]},
+  {name:'Albumin',unit:'g/L',refMin:25,refMax:41,values:[
+    {date:'25.04.25',val:24.3},{date:'25.05.22',val:27.0},{date:'25.05.30',val:32.0},{date:'25.06.27',val:40.5},{date:'25.08.08',val:31.1},{date:'26.02.09',val:23.4},{date:'26.05.16',val:27.4}]},
+  {name:'Összfehérje',unit:'g/L',refMin:55,refMax:75,values:[
+    {date:'25.04.25',val:66},{date:'25.05.22',val:65},{date:'25.05.30',val:66},{date:'25.06.27',val:73},{date:'25.08.08',val:62.9},{date:'26.02.09',val:52},{date:'26.05.16',val:57}]},
+  {name:'Koleszterin',unit:'mmol/L',refMin:3.2,refMax:6.2,values:[
+    {date:'25.04.25',val:2.1},{date:'25.05.22',val:2.3},{date:'25.05.30',val:3.4},{date:'25.06.27',val:4.5},{date:'26.02.09',val:1.1},{date:'26.05.16',val:6.8}]},
+  {name:'Kreatinin',unit:'µmol/L',refMin:20,refMax:150,values:[
+    {date:'25.04.25',val:134},{date:'25.05.22',val:153},{date:'25.05.30',val:99},{date:'25.06.27',val:98},{date:'26.02.09',val:5},{date:'26.02.27',val:55},{date:'26.05.16',val:63},{date:'26.07.03',val:63}]},
+  {name:'Karbamid',unit:'mmol/L',refMin:2.5,refMax:6.7,values:[
+    {date:'25.04.25',val:10.3},{date:'25.05.22',val:16.8},{date:'25.05.30',val:7.4},{date:'25.06.27',val:8.8},{date:'25.08.08',val:6.1},{date:'26.02.09',val:7.5},{date:'26.05.16',val:6.0}]},
+  {name:'CRP',unit:'mg/L',refMin:0,refMax:10,values:[
+    {date:'25.04.25',val:60.4},{date:'25.05.22',val:25.6},{date:'25.05.30',val:0.5,label:'<det'},{date:'25.06.27',val:0.5,label:'<det'},{date:'26.05.16',val:0.5,label:'<det'}]},
+  {name:'Fehérvérsejtszám',unit:'G/L',refMin:6,refMax:15,values:[
+    {date:'25.04.25',val:12.5},{date:'25.05.22',val:11.8},{date:'25.05.30',val:21.1},{date:'25.06.27',val:15.3},{date:'26.02.27',val:12.5},{date:'26.05.16',val:9.6},{date:'26.07.03',val:11.9}]},
+  {name:'Eosinofil (abs.)',unit:'G/L',refMin:0.1,refMax:1.2,values:[
+    {date:'26.02.27',val:0.00,label:'0,00'},{date:'26.05.16',val:0.00,label:'0,00'},{date:'26.07.03',val:0.10}]},
+  {name:'Thrombocyta',unit:'G/L',refMin:150,refMax:450,values:[
+    {date:'26.02.27',val:482},{date:'26.05.16',val:370},{date:'26.07.03',val:404}]},
+  {name:'Hemoglobin',unit:'g/L',refMin:120,refMax:180,values:[
+    {date:'25.04.25',val:141},{date:'25.05.22',val:144},{date:'25.05.30',val:115},{date:'25.06.27',val:147},{date:'26.02.27',val:145},{date:'26.05.16',val:149},{date:'26.07.03',val:143}]},
+  {name:'Hematokrit',unit:'%',refMin:38,refMax:57,values:[
+    {date:'25.04.25',val:42.9},{date:'25.05.22',val:39.2},{date:'25.05.30',val:34.3},{date:'25.06.27',val:42.9},{date:'26.02.27',val:43.1},{date:'26.05.16',val:43.7},{date:'26.07.03',val:43.1}]},
   {name:'Kortizol (bazális)',unit:'nmol/L',refMin:19,refMax:100,values:[
-    {date:'05.22',val:9.93,label:'<9.93'},{date:'06.27',val:9.93,label:'<9.93'},{date:'09.03',val:42.2}]},
+    {date:'25.05.22',val:9.93,label:'<9.93'},{date:'25.06.27',val:9.93,label:'<9.93'},{date:'25.09.03',val:42.2}]},
 ];
 
 function buildCharts(){
   const grid=document.getElementById('chartGrid');grid.innerHTML='';
   const cH=140; // chart area height in pixels
-  const labelH=28; // space below chart for date labels
+  const labelH=52; // space below chart for rotated date labels
   labData.forEach(p=>{
     const card=document.createElement('div');card.className='chart-card';
     const allV=p.values.map(v=>v.val);
